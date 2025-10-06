@@ -4,7 +4,7 @@ A portfolio project showcasing large-scale data analysis with **Apache Spark** o
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 - **Databricks** (workspace, clusters, repos, jobs)  
 - **Apache Spark** (SQL, DataFrames, MLlib, Streaming, RDDs)  
@@ -14,7 +14,7 @@ A portfolio project showcasing large-scale data analysis with **Apache Spark** o
 
 ---
 
-## 📦 Datasets
+## Datasets
 
 - **Car Rentals** – exploration + graph analysis  
 - **Credit Card Approval** – ML classification  
@@ -22,7 +22,7 @@ A portfolio project showcasing large-scale data analysis with **Apache Spark** o
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ~~~text
 .
@@ -45,7 +45,7 @@ A portfolio project showcasing large-scale data analysis with **Apache Spark** o
 
 ---
 
-## 🚀 Running on Databricks
+## Running on Databricks
 
 1. **Import this repo** into Databricks Repos.  
 2. **Install GraphFrames** on the cluster:  
@@ -58,7 +58,7 @@ A portfolio project showcasing large-scale data analysis with **Apache Spark** o
 
 ---
 
-## 🖥️ Running Locally (optional)
+## Running Locally (optional)
 
 1. Create a virtual environment and install dependencies:
    ~~~bash
@@ -75,7 +75,7 @@ A portfolio project showcasing large-scale data analysis with **Apache Spark** o
 
 ---
 
-## 🔎 Results Overview
+## Results Overview
 
 - **Car Rentals:** most active customers, top car types, Tesla popularity, correlation between trips & reviews, PageRank & communities.  
 - **Credit Scoring:** complete ML pipeline with data cleaning, feature engineering, Random Forest; achieved baseline AUC ≈ 0.60; oversampling improved recall.  
@@ -84,7 +84,7 @@ A portfolio project showcasing large-scale data analysis with **Apache Spark** o
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 Common paths (adjust in each notebook):
 ~~~python
@@ -96,7 +96,7 @@ CHECKPOINT_PATH = f"{BASE_PATH}/checkpoints"
 
 ---
 
-## ✅ Requirements
+## Requirements
 
 - Databricks Runtime 13.x/14.x (Spark 3.x)  
 - GraphFrames library installed on the cluster  
