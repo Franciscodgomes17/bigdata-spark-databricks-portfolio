@@ -1,31 +1,17 @@
+# Development requirements for running locally (not needed in Databricks runtime)
+# Do not install pyspark inside Databricks clusters.
 
-### 2. **Enhanced requirements.txt**
+pyspark==3.4.1
+pandas==2.2.2
+numpy==1.26.4
+matplotlib==3.8.4
 
-# Core Data Science
-numpy>=1.21.0
-pandas>=1.3.0
-scipy>=1.7.0
+# Machine Learning
+scikit-learn==1.5.1
+imbalanced-learn==0.12.3
 
-# Visualization
-matplotlib>=3.5.0
-seaborn>=0.11.0
-plotly>=5.0.0
-
-# Machine Learning & Data Processing
-scikit-learn>=1.0.0
-imbalanced-learn>=0.8.0
-
-# Deep Learning
-tensorflow>=2.8.0
-keras>=2.8.0
-
-# Image Processing
-Pillow>=9.0.0
-opencv-python>=4.5.0
+# IO & performance
+pyarrow==15.0.2
 
 # Utilities
-prettytable>=2.0.0
-
-# Jupyter
-jupyter>=1.0.0
-ipykernel>=6.0.0
+tqdm==4.66.4
