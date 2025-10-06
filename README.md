@@ -1,109 +1,107 @@
-# Breast Cancer Image Classification with Deep Learning
+# Big Data Analytics with Apache Spark on Databricks
 
-This project applies **Convolutional Neural Networks (CNNs)** to the task of **breast cancer diagnosis** using medical imaging data.  
-It compares **binary classification** (benign vs malignant) with **multi-class classification** (cancer subtypes), evaluating models through multiple metrics and visualizations.
-
----
-
-##  Project Structure
-- `Functions_Group_8.py` → Helper functions for preprocessing, training, and evaluation  
-- `Notebook_Group_8.ipynb` → Jupyter notebook with experiments and results  
-- `Report_Group_8.pdf` → Final academic report (with methodology, results, and discussion)  
-- `Report_Group_8 - Latex/` → LaTeX source files for the report  
+A portfolio project showcasing large-scale data analysis with **Apache Spark** on **Databricks**, covering SQL, Graph Analytics, Machine Learning Pipelines, RDD/MapReduce, and Structured Streaming.
 
 ---
 
-##  Installation
-Clone the repository and install dependencies:
+## 🧰 Tech Stack
 
-```bash
-git clone https://github.com/yourusername/breast-cancer-image-classification.git
-cd breast-cancer-image-classification
-pip install -r requirements.txt
+- **Databricks** (workspace, clusters, repos, jobs)  
+- **Apache Spark** (SQL, DataFrames, MLlib, Streaming, RDDs)  
+- **GraphFrames** (graph analytics)  
+- **Python** 3.10+  
+- Optional local dev: `pyspark`, `pandas`, `numpy`, `matplotlib`, `scikit-learn`, `imbalanced-learn`
 
-Requirements
-Main dependencies:
+---
 
-numpy
+## 📦 Datasets
 
-pandas
+- **Car Rentals** – exploration + graph analysis  
+- **Credit Card Approval** – ML classification  
+- **E-commerce UK** – RDD/MapReduce, time series & streaming simulation  
 
-scikit-learn
+---
 
-imbalanced-learn
+## 📁 Repository Structure
 
-Pillow
+~~~text
+.
+├─ notebooks/
+│  ├─ 01_car_rentals_sparksql_graphframes.py
+│  ├─ 02_credit_scoring_ml_pipeline.py
+│  ├─ 03_ecommerce_rdd_mapreduce.py
+│  ├─ 04_streaming_simulation.py
+│  └─ utils/
+│     └─ viz.py
+├─ configs/
+│  └─ streaming.yaml
+├─ data/               # optional; in Databricks use DBFS
+├─ docs/
+│  └─ Report.pdf
+├─ requirements.txt
+├─ README.md
+└─ LICENSE
+~~~
 
-opencv-python
+---
 
-tensorflow
+## 🚀 Running on Databricks
 
-keras
+1. **Import this repo** into Databricks Repos.  
+2. **Install GraphFrames** on the cluster:  
+   - *Compute → Libraries → Install New → Maven*  
+   - Example coordinate (for Spark 3.x):  
+     `graphframes:graphframes:0.8.3-spark3.0-s_2.12`  
+   - Restart cluster.  
+3. **Upload datasets** to `dbfs:/FileStore/<project>/...`.  
+4. **Run notebooks** sequentially to reproduce the analyses.
 
-matplotlib
+---
 
-seaborn
+## 🖥️ Running Locally (optional)
 
-plotly
+1. Create a virtual environment and install dependencies:
+   ~~~bash
+   python -m venv .venv
+   source .venv/bin/activate   # Windows: .venv\Scripts\activate
+   pip install -r requirements.txt
+   ~~~
+2. Start a local Spark session (`master("local[*]")`).  
+3. Execute scripts from `notebooks/`.  
+   ~~~bash
+   python notebooks/01_car_rentals_sparksql_graphframes.py
+   ~~~
+> Note: GraphFrames requires adding the JAR via `spark.jars.packages` or skipping graph sections locally.
 
-jupyter
+---
 
-(See requirements.txt for the full list)
+## 🔎 Results Overview
 
-📊 Features
-Preprocessing and augmentation of breast cancer imaging datasets
+- **Car Rentals:** most active customers, top car types, Tesla popularity, correlation between trips & reviews, PageRank & communities.  
+- **Credit Scoring:** complete ML pipeline with data cleaning, feature engineering, Random Forest; achieved baseline AUC ≈ 0.60; oversampling improved recall.  
+- **E-commerce:** UK dominated sales; November = peak month; RDD/MapReduce used for metrics by country/product/customer.  
+- **Streaming:** near real-time ingestion of CSV micro-batches (~10s triggers), windowed aggregations, watermarking, and Parquet sink.  
 
-Binary classification (benign vs malignant)
+---
 
-Multi-class classification (cancer subtypes)
+## ⚙️ Configuration
 
-Deep Learning models based on CNNs:
+Common paths (adjust in each notebook):
+~~~python
+BASE_PATH = "dbfs:/FileStore/bigdata"  # or ./data locally
+INPUT_PATH = f"{BASE_PATH}/raw"
+OUTPUT_PATH = f"{BASE_PATH}/processed"
+CHECKPOINT_PATH = f"{BASE_PATH}/checkpoints"
+~~~
 
-VGG16, ResNet50, Custom CNN
+---
 
-Evaluation metrics:
+## ✅ Requirements
 
-ROC, Precision-Recall, F1 Score
+- Databricks Runtime 13.x/14.x (Spark 3.x)  
+- GraphFrames library installed on the cluster  
+- Python 3.10+  
 
-Confusion Matrices & Heatmaps
+For local development, use this `requirements.txt`:
 
-Calibration curves
-
-Comparative analysis between binary and multi-class approaches
-
-🧪 Usage
-Open the Jupyter notebook and run the experiments:
-
-bash
-Copiar código
-jupyter notebook Notebook_Group_8.ipynb
-Or import helper functions from Functions_Group_8.py in your own scripts.
-
-📖 Report
-The full research report is available here:
-👉 Report_Group_8.pdf
-
-👥 Authors
-Carolina Almeida
-
-Duarte Carvalho
-
-Francisco Gomes
-
-Margarida Henriques
-
-Marta Monteiro
-
-
-
-📜 License
-This project is licensed under the MIT License – see the LICENSE file for details.
-
-yaml
-Copiar código
-
-
-
-
-
-
+---
